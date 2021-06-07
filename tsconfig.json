@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "declaration": true,
+    "lib": ["esnext"]
+  },
+  "include": ["src/**/*"]
+}
