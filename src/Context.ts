@@ -12,8 +12,9 @@ class Context {
   public app: Amotion;
 
   // Properties
-  public state: any;
-  public params: any;
+  public state: any = {};
+  public params: any = {};
+  public query: any = {};
   public method: string;
   public path: string;
   public url: string;
@@ -32,7 +33,6 @@ class Context {
     this.request = new Request(request);
     this.reply = new Reply(response);
     this.app = app;
-    this.state = {};
 
     // Properties
     this.method = request.method;

@@ -5,10 +5,7 @@ const sfs = require("fs");
 const app = new Amotion();
 
 app.use((ctx) => {
-  ctx.done();
-});
-app.use((ctx) => {
-  console.log(ctx.path);
+  console.log(ctx);
   ctx.done();
 });
 

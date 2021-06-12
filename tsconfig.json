@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "target": "es6",
+    "module": "es6",
     "lib": ["esnext"],
-    "strict": true,
+//    "strict": true,
     "declaration": true,
     "outDir": "dist",
     "sourceMap": true
