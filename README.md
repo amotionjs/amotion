@@ -1,3 +1,1 @@
-# amotion
-
-Framework for create web-services
+![Логотип Amotion.js](./docs/images/logo.png)
