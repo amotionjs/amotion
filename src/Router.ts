@@ -29,6 +29,26 @@ class Router {
     );
   }
 
+  use(path: string | HandlerFC, ...handlers: HandlerFC[]): Router {
+    if (typeof path === "function") {
+      handlers = [path, ...handlers];
+      path = "*";
+    }
+
+    let route = this.middlewares.find((route) => route.path === path);
+    if (route) {
+      route.handlers = [...route.handlers, ...handlers];
+      this.middlewares = [
+        ...this.middlewares.filter((route) => route.path !== path),
+        route,
+      ];
+    } else {
+      this.middlewares.push(new Route("MIDDLEWARE", path, handlers));
+    }
+
+    return this;
+  }
+
   public add(
     method: string,
     path: string,
@@ -63,6 +83,16 @@ class Router {
 
     let params: any = {},
       handlers: HandlerFC[] = [];
+
+    for (const route of this.middlewares) {
+      const rslt = route.match(path);
+
+      if (rslt) {
+        params = rslt.params;
+        handlers = rslt.handlers;
+        break;
+      }
+    }
 
     for (const route of this.tree[method]) {
       const rslt = route.match(path);

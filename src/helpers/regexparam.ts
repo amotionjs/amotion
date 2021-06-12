@@ -1,10 +1,12 @@
 interface ParseBody {
-  keys: string[],
-  pattern:RegExp
+  keys: string[];
+  pattern: RegExp;
 }
 
-
-export default function parse(str: string | RegExp, loose?: boolean): ParseBody {
+export default function parse(
+  str: string | RegExp,
+  loose?: boolean
+): ParseBody {
   // RegExp
   if (str instanceof RegExp) return { keys: [], pattern: str };
 

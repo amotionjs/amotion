@@ -4,7 +4,7 @@ import { HandlerFC } from "./types";
 class Route {
   private method: string;
   private _path: string;
-  private handlers: HandlerFC[];
+  public handlers: HandlerFC[];
   private keys: string[];
   private pattern: RegExp;
 

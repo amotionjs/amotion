@@ -10,15 +10,15 @@ const CONTENT_TYPES = {
 };
 
 class Reply {
-  public id: string
+  public id: string;
   public raw: ServerResponse;
 
   constructor(response: ServerResponse) {
-    this.id = nanoid(24)
+    this.id = nanoid(24);
     this.raw = response;
 
     // Request ID
-    this.setHeader('X-Request-Id', this.id)
+    this.setHeader("X-Request-Id", this.id);
     // Powered
     this.setHeader("X-Powered", "Amotion.js");
   }
@@ -71,9 +71,9 @@ class Reply {
         .length(payload.length)
         .raw.end(payload, "binary");
     } else if (payload instanceof Stream) {
-      this.type(CONTENT_TYPES.BIN)
-      this.removeHeader('Content-Length');
-      payload.pipe(this.raw)
+      this.type(CONTENT_TYPES.BIN);
+      this.removeHeader("Content-Length");
+      payload.pipe(this.raw);
     } else {
       this.removeHeader("Content-Length");
       this.type(CONTENT_TYPES.JSON).end(JSON.stringify(payload));

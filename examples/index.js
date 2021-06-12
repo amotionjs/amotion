@@ -4,6 +4,14 @@ const sfs = require("fs");
 
 const app = new Amotion();
 
+app.use((ctx) => {
+  ctx.done();
+});
+app.use((ctx) => {
+  console.log(ctx.path);
+  ctx.done();
+});
+
 app.get("/", async (ctx) => "<h1>Hello, world!</h1>");
 
 app.get("/buffer", async (ctx) => {

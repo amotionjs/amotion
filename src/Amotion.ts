@@ -2,7 +2,7 @@ import { createServer, Server, IncomingMessage, ServerResponse } from "http";
 import Router from "./Router";
 import methods from "./methods";
 import Context from "./Context";
-import { ErrorHandlerFC, RouterHttpMethodFC } from "./types";
+import { ErrorHandlerFC, RouterHttpMethodFC, RouterUseFC } from "./types";
 import HttpError from "./HttpError";
 import delegate from "./helpers/delegate";
 
@@ -21,6 +21,7 @@ class Amotion {
   public static HttpError = HttpError;
 
   // Router Methods
+  public use: RouterUseFC;
   public get: RouterHttpMethodFC;
   public post: RouterHttpMethodFC;
   public put: RouterHttpMethodFC;
@@ -37,6 +38,7 @@ class Amotion {
     };
 
     delegate(this.router, this).methods(
+      "use",
       "get",
       "post",
       "put",
