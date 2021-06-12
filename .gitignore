@@ -3,3 +3,6 @@ dist
 .cache
 package-lock.json
 yarn.lock
+.idea
+yarn-error.log
+yarn.lock
