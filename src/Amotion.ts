@@ -99,7 +99,7 @@ class Amotion {
     }
   }
 
-  public start(port: number): any {
+  public start(port: number): Promise<Server> {
     return new Promise((resolve, reject) => {
       this.server.on("error", (err) => reject(err));
       this.server.listen(port, () => resolve(this.server));
