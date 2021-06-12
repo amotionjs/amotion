@@ -7,7 +7,7 @@ interface RouterTree {
 }
 
 class Router {
-  readonly tree: RouterTree;
+  private tree: RouterTree;
   private routes: Route[];
   private middlewares: Route[];
   private prefix: string;
@@ -27,13 +27,6 @@ class Router {
     this.tree = Object.fromEntries(
       methods.map((method: string) => [method, []])
     );
-  }
-
-
-  use(...handlers: HandlerFC[]): this;
-  use(path?: string, ...handlers: HandlerFC[]): this {
-
-    return this
   }
 
   public add(
