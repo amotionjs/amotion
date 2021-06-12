@@ -1,1 +1,1 @@
-![Логотип Amotion.js](./docs/images/logo.png)
+![Логотип Amotion.js](./docs/images/preview.png)
