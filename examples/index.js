@@ -5,7 +5,6 @@ const sfs = require("fs");
 const app = new Amotion();
 
 app.use((ctx) => {
-  console.log(ctx);
   ctx.done();
 });
 

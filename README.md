@@ -28,8 +28,9 @@
 Ниже будет подробное описание все что входит в `Context`
 ### Request
 - [x] .id - индификационный ключ запроса
+- [x] .method - метод запроса к серверу
 - [ ] .query - проанализированная строка запроса
-- [x] .url - полный путь (пример: /oauth/facebook?callbackURL=http://localhost:8080/cb)
+- [x] .url - полный путь (пример: "/oauth/facebook?callbackURL=http://localhost:8080/cb)
 - [ ] .path - путь без строки запроса (пример: /oauth/facebook)
 - [ ] .body - тело запроса
 - [x] .headers - заголовки запроса
