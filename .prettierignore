@@ -1,2 +1,7 @@
-dist
 node_modules
+dist
+.cache
+package-lock.json
+.idea
+yarn-error.log
+yarn.lock

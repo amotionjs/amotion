@@ -1,4 +1,4 @@
-![Логотип Amotion.js](./docs/images/preview.svg)
+![Логотип Amotion.js](docs/preview.svg)
 Быстрая и простая библиотека написанная на typescript для создания микросервисов и более сложных веб-сервисов на Node.js
 
 ## Быстрое начало
