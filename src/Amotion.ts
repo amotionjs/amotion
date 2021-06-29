@@ -1,8 +1,20 @@
-import { createServer, Server } from 'http';
+import { createServer, Server, IncomingMessage, ServerResponse } from 'http';
+import Context from './Context';
 
 class Amotion {
   // Создаем сервер
-  private _server: Server = createServer();
+  private _server: Server = createServer(
+    (req: IncomingMessage, res: ServerResponse) =>
+      setImmediate(() => this.handleRequest(req, res)),
+  );
+
+  // Обработчик запросов на сервер
+  public handleRequest = (req: IncomingMessage, res: ServerResponse): void => {
+    // Создаем контекст запроса
+    const ctx = new Context(req, res, this);
+    
+
+  };
 
   // Запуск приложения
   public run = (port: number): Promise<void> =>

@@ -18,6 +18,8 @@ export default {
     resolve(),
     commonjs(),
     babel({ babelHelpers: 'bundled' }),
-    typescript(),
+    typescript({
+      typescript: require('typescript'),
+    }),
   ],
 };
