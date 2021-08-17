@@ -2,4 +2,10 @@ const Amotion = require('../dist');
 
 const app = new Amotion();
 
-app.run(3000)
+app.router.add('GET', '/status', () => {
+
+})
+
+app.run(3000).then(() => {
+  console.log('App running...');
+});

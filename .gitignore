@@ -1,8 +1,11 @@
-node_modules
-dist
-.cache
+# Directories
+/node_modules/
+/dist/
+/.idea/
+/.cache/
+
+# Files
 package-lock.json
 yarn.lock
-.idea
 yarn-error.log
-yarn.lock
+.DS_Store
