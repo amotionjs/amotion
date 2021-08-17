@@ -1,7 +1,5 @@
-import { createServer, Server, IncomingMessage, ServerResponse } from 'http';
+import { createServer, IncomingMessage, ServerResponse } from 'http';
 import Context from './Context';
-import { Handler } from './types';
-import MWS from './MWS';
 import Router from './Router';
 
 export interface AmotionOptions {
